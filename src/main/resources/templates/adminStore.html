@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet"
+          th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+
+</head>
+<body>
+<h1>Hello</h1>
+
+<span class="errorMessage" th:utext="${errorMessage}"></span>
+<span th:text="${message}">toto</span>
+
+<form method="post" th:action="@{/adminSubmit}" th:object="${creationBean}">
+
+    <p>name: <input th:field="*{name}" type="text"/></p>
+    <p>price: <input th:field="*{price}" type="text"/></p>
+    <p>date: <input th:field="*{date}" type="text"/></p>
+    <p>url1: <input th:field="*{url1}" type="text"/></p>
+    <p>url2: <input th:field="*{url2}" type="text"/></p>
+    <p>pwd: <input th:field="*{pwd}" type="password"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet"
+          th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+
+</head>
+<body>
+<h1>Utilisateurs enregistrés : </h1>
+<ol>
+    <li th:each="user: ${userList}" th:text="${user.name}"
+        th:style="${ userConnected !=  null &&  userConnected.name.equals(user.name) }? 'font-weight: bold;'"
+    >
+    </li>
+
+</ol>
+
+</body>
+</html>
